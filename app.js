@@ -4,6 +4,8 @@ import bookRoutes from './routes/bookRoutes.js';
 const app = express();
 
 app.use('/book', bookRoutes);
+app.use('/student', studentRoutes);
+
 
 try {
     const port = 3000;
