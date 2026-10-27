@@ -1,9 +1,10 @@
 import * as bookController from '../controllers/bookControllers.js';
 import express from "express";
 
-const bookRoutes = express.Routers = express.Router();
+const bookRoutes  = express.Router();
 
-bookRoutes.get('/', bookController.fetchAllBooks);
+bookRoutes.get ('/all', bookController.fetchAllbooks);
+bookRoutes.post ('/', bookController.fetchAllbooks);
 
 export default bookRoutes;
 

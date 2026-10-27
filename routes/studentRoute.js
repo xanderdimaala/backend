@@ -1,8 +1,9 @@
-studentRoutes.studentController from '../controllers/studentController.js;
+import * as studentController from  '../controllers/studentController.js';
 import express from "express";
 
-studentRoutes = express.Routers = express.Router();
+const studentRoutes = express.Router();
 
-studentRoutes.get('/', studentController.fetchAllstudent);
+studentRoutes.get ('/all', studentController.fetchAllstudent);
+studentRoutes.post ('/', studentController.Createstudent);
 
 export default studentRoutes;
