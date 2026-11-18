@@ -34,7 +34,7 @@ export const createAccount = async(user) =>{
     }
 
     // generate salt
-    const salt =  bcrypt.genSaltSync(10); // paghaba ng salt, paghirap ma-decode. disadvantage: paghaba ng salt, pag tagal ng process
+    const salt =  bcrypt.genSaltSync(10); 
     const hashedPassword = bcrypt.hashSync(user.password, salt); 
 
     const result = await userModel.insert(user.name, user.email, hashedPassword);
