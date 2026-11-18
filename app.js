@@ -1,9 +1,9 @@
 import express from "express";
 import cors from 'cors';
-
-
 import bookRoutes from './routes/bookRoutes.js';
 import studentRoutes from './routes/studentRoute.js';
+import userRoute from "./routes/userRoutes.js"; 
+
 
 let corsOptions = {
     origin: 'http://localhost:5173'
@@ -15,6 +15,7 @@ app.use(cors(corsOptions));
 
 app.use('/book', bookRoutes);
 app.use('/student', studentRoutes);
+app.use('/user', userRoute);
 
 try {
     const port = 3000;
