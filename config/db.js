@@ -1,10 +1,16 @@
-import mysql from 'mysql2/promise.js'
+import mysql from 'mysql2/promise.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const pool = mysql.createPool({
-    host: '127.0.0.1',
-    user: 'root',
-    password: "",
-    database: 'librarydb'
-})
+    host: process.env.DB_HOST || '127.0.0.1',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD !== undefined ? process.env.DB_PASSWORD : '',
+    database: process.env.DB_NAME || 'allmighty',
+    port: process.env.DB_PORT || 3306,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
+});
 
 export default pool;
